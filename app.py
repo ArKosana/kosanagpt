@@ -3,6 +3,11 @@ from models import query_model
 
 app = Flask(__name__)
 
+@app.route("/", methods=["GET"])
+def home():
+    return "✅ KosanaGPT is running! Use the /chat endpoint for POST requests."
+
+
 @app.route('/chat', methods=['POST'])
 def chat():
     data = request.json
